@@ -1,0 +1,25 @@
+#page {
+    
+    background: linear-gradient(to right, #6E44BD , #00C4CC);
+    color:white;
+}
+h1{
+    margin-bottom: 40px;
+}
+label {
+    color: white;
+}
+.btn-send {
+    color: #fff;
+    background-color: #5cc30d;
+    border-color: #5cc30d;
+}
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: rgba(245, 245, 245, 0);
+    border: 1px solid rgba(227, 227, 227, 0);
+    border-radius: 4px;
+}
+

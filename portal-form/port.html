@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-messages.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body  ng-app="myApp">
+<div class="container">
+<h3>Billing Information</h3>
+<hr>
+<form class="well form-horizontal" action=" " method="post"  id="contact_form" role="form" name="myForm" ng-controller="myCtrl">
+<fieldset>
+
+<div class="form-group">
+<label class="col-md-4 control-label">First Name</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input type="text" name="myName" ng-model="myname" ng-minlength="5" ng-maxlength="10" ng-focus="Show()" class="form-control input" placeholder="First Name" required />
+<div ng-messages="myForm.myName.$error" style="color:maroon" role="alert" ng-show="difine">
+<div ng-message="required">You did not enter a field</div>
+<div ng-message="minlength">Your field is too short</div>
+<div ng-message="maxlength">Your field is too long</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label" >Last Name</label> 
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+<input type="text" name="lastName" ng-model="Myname" ng-minlength="5" ng-maxlength="15"  class="form-control input" ng-focus="ballon1()" placeholder="Last Name" required  />
+<div ng-messages="myForm.lastName.$error" style="color:maroon" role="alert" ng-show="dolor1">
+<div ng-message="required">You did not enter a field</div>
+<div ng-message="minlength">Your field is too short</div>
+<div ng-message="maxlength">Your field is too long</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">E-Mail</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+<input type="email" name="email" ng-model="Email"  ng-maxlength="8" ng-focus="ballon3()" class="form-control input" placeholder="Email Address" required />
+<div ng-messages="myForm.email.$error" style="color:maroon" role="alert" ng-show="dolor3">
+<div ng-message="maxlength">Enter valid e-mail id @</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">Address 1</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+<input type="text" name="adress" ng-model="address"  ng-minlength="2" ng-focus="ballon4()" class="form-control input" placeholder="" required/>
+<div ng-messages="myForm.adress.$error" style="color:maroon" role="alert" ng-show="dolor4">
+<div ng-message="minlength">required field</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="col-md-4 control-label">Address 2</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+<input name="city" placeholder="address 2" class="form-control"  type="text" required/>
+<!-- <input type="text" name="adress" ng-model="address"  ng-minlength="2" ng-focus="ballon4()" class="form-control input-lg" placeholder="" required/>
+<div ng-messages="myForm.adress.$error" style="color:maroon" role="alert" ng-show="dolor4">
+<div ng-message="minlength">required field</div>
+</div> -->
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="col-md-4 control-label">Country</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+<input name="city" placeholder="Country" class="form-control"  type="text" required/>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="col-md-4 control-label">State</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+<input name="city" placeholder="State" class="form-control"  type="text" required/>
+</div>
+</div>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">City</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+<input name="city" placeholder="city" class="form-control"  type="text" required/>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label">Zip Code</label>  
+<div class="col-md-4 inputGroupContainer">
+<div class="input-group">
+<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+<input name="zip" placeholder="Zip Code" class="form-control"  type="text" required/>
+</div>
+</div>
+</div>
+</fieldset>
+</form>
+</div>
+</div>
+
+
+<hr>
+
+<!-- <div>page2</div> -->
+<div id="page2">
+<div class="container" >
+<div class="row">
+<div class="col-xs-12 col-md-4">
+<div class="panel panel-default credit-card-box">
+<div class="panel-heading display-table" >
+<div class="row display-tr" >
+<h3 class="panel-title display-td" >Payment Details</h3>
+<div class="display-td" >                            
+<img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+</div>
+</div>                    
+</div>
+<div class="panel-body">
+<form role="form" id="payment-form">
+<div class="row">
+<div class="col-xs-12">
+<div class="form-group">
+<label for="cardNumber">CARD NUMBER</label>
+<div class="input-group">
+<input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" requiredautofocus />
+<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span> 
+</div>
+</div>                            
+</div>
+</div>
+<div class="row">
+<div class="col-xs-7 col-md-7">
+<div class="form-group">
+<label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+<input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+</div>
+</div>
+<div class="col-xs-5 col-md-5 pull-right">
+<div class="form-group">
+<label for="cardCVC">CV CODE</label>
+<input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required/>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="form-group">
+<label for="couponCode">COUPON CODE</label>
+<input type="text" class="form-control" name="couponCode" required/>
+</div>
+</div>                        
+</div>
+<div class="row">
+<div class="col-xs-12">
+<button class="btn btn-success btn-lg btn-block" type="submit">Pay</button>
+</div>
+</div>
+<div class="row" style="display:none;">
+<div class="col-xs-12">
+<p class="payment-errors"></p>
+</div>
+</div>
+</form>
+</div>
+</div>            
+
+
+
+</div>            
+
+
+
+</div>
+</div>
+
+</div>
+<script type="text/javascript" src="port.js"></script>
+</body>
+</body>
+</html>
